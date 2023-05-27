@@ -1,0 +1,42 @@
+<div class="container">
+    <br />
+    <button class="btn btn-primary" routerLink="/admin/product/add">
+        Thêm sản phẩm
+    </button>
+    <hr />
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên</th>
+                <th>Giá</th>
+                <th>Ảnh</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products; index as i">
+                <td>{{ i + 1 }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <td><img [src]="product.img" alt="" /></td>
+                <td>
+                    <button
+                        class="btn btn-danger"
+                        (click)="removeItem(product.id)!"
+                    >
+                        Xóa
+                    </button>
+
+                    <button
+                        style="margin-left: 10px"
+                        class="btn btn-primary"
+                        routerLink="/admin/product/{{ product.id }}/edit"
+                    >
+                        Edit
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

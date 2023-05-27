@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "name": "Sản phảm B",
+      "price": 200,
+      "img": "https://picsum.photos/seed/picsum/80/80",
+      "id": 2
+    },
+    {
+      "name": "Sản phảm D",
+      "price": 100,
+      "img": "https://picsum.photos/seed/picsum/80/80",
+      "id": 1
+    },
+    {
+      "id": 3,
+      "name": "Product C",
+      "price": 400,
+      "img": "https://picsum.photos/seed/picsum/80/80"
+    },
+    {
+      "name": "Product A",
+      "price": 300,
+      "img": "https://picsum.photos/seed/picsum/80/80",
+      "id": 5
+    }
+  ]
+}

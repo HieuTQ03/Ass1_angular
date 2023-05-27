@@ -1,0 +1,203 @@
+:root {
+    --admin-header-height: 70px;
+    --admin-footer-height: 70px;
+    --admin-nav-width: 250px;
+    --spacing: 2rem;
+
+    --color-white: #fff;
+    --color-gray: #f0f0f0;
+    --color-bgDefault: #222d32;
+
+    --color-ifs: #ab111c;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.ifs_admin {
+    display: grid;
+
+    width: 100%; // for styleguide only
+    height: 100vh;
+
+    grid-template-rows: var(--admin-header-height) 1fr var(
+            --admin-footer-height
+        );
+    grid-template-columns: var(--admin-nav-width) 1fr;
+    grid-template-areas:
+        "header  header"
+        "nav    main"
+        "footer footer";
+}
+
+/* nav */
+.ifs_nav {
+    overflow: hidden;
+    flex: 0 0 250px;
+    /* specific rules ?! */
+
+    height: 100vh;
+
+    background-color: var(--color-bgDefault);
+
+    grid-area: nav;
+}
+
+.ifs_menu {
+    overflow-y: scroll;
+
+    width: 265px;
+    height: 100vh;
+    padding: 0;
+
+    list-style-type: none;
+
+    &-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        border-left: 3px solid transparent;
+
+        &--active {
+            color: var(--color-white);
+            border-left: 3px solid var(--color-ifs);
+
+            & .ifs_menu-link {
+                color: #fff;
+                // background-color: #1f222d;
+                background-color: rgb(30, 40, 44);
+            }
+        }
+    }
+
+    &-link {
+        display: block;
+
+        padding: 1rem 2rem;
+
+        text-decoration: none;
+
+        color: #76808f;
+        // color: var(--color-ash);
+
+        .fa {
+            margin-right: 10px;
+        }
+
+        &:hover,
+        &:focus {
+            color: #fff;
+            // background-color: #1f222d;
+            background-color: rgb(30, 40, 44);
+        }
+    }
+}
+/* footer */
+
+.footer {
+    display: flex;
+    grid-area: footer;
+    flex-basis: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--admin-footer-height);
+    padding: 0 var(--spacing);
+    color: #4e5561;
+    background-color: #1d2127;
+}
+
+/* header */
+.ifs_header {
+    position: relative;
+
+    display: flex;
+
+    height: var(--admin-header-height);
+
+    background-color: var(--color-bgDefault);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+
+    flex-basis: 100%;
+    grid-area: header;
+}
+
+.ifs_logo {
+    font-size: 1rem;
+
+    position: relative;
+
+    display: flex;
+    flex: 0 0 var(--admin-nav-width);
+
+    height: var(--admin-header-height);
+    margin: 0;
+
+    background-color: var(--color-white);
+
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        margin: 0;
+    }
+}
+
+.ifs_toolbar {
+    display: flex;
+    flex: 1;
+
+    padding: 0 var(--spacing);
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ifs_sidebar--toggle {
+    font-size: 25px;
+
+    display: flex;
+
+    cursor: pointer;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.ifs_user--toggle {
+    display: flex;
+
+    align-items: center;
+}
+
+// //todo: @christobal - enjoy precedence with AdminLTE :0
+// //todo: could be interesting to change some part according to theme
+// //todo: rename `logoEMIBig` and `logoEMIMini` class
+
+.main-header {
+    .navbar,
+    .user-header {
+        color: white !important;
+        background-color: #222d32 !important;
+        //height: auto !important;
+    }
+    .sidebar-toggle:hover {
+        background-color: #a73737 !important;
+    }
+    .logo {
+        background-color: #ffffff !important;
+    }
+    .logo:hover {
+        background-color: #dddddd !important;
+    }
+    .logoEMIbig {
+        content: url("https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiw347_i9neAhVOXBoKHYZEBDcQjRx6BAgBEAU&url=http%3A%2F%2Fmajeure-emi.fr%2F&psig=AOvVaw0FZSMddKlnsfpnXLQn2gIs&ust=1542463902053002");
+        //height: 37px;
+    }
+
+    .logoEMImini {
+        background-color: #ffffff;
+        //height: 16px;
+    }
+}

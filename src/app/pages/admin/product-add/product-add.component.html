@@ -1,0 +1,28 @@
+<form action="" (ngSubmit)="onHandleSubmit()" [formGroup]="productForm">
+    <br />
+    <div style="width: 70%">
+        <input
+            type="text"
+            class="form-control"
+            placeholder="Name"
+            formControlName="name"
+        />
+    </div>
+    <br />
+    <div style="width: 70%">
+        <input
+            type="text"
+            class="form-control"
+            placeholder="Price"
+            formControlName="price"
+        />
+    </div>
+    <br />
+    <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!productForm.valid"
+    >
+        Submit
+    </button>
+</form>
